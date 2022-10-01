@@ -1,0 +1,20 @@
+<div>
+
+  <p *ngFor="let message of messages">
+    {{message.sendTime}}&nbsp;&nbsp;&nbsp;
+    <strong>{{message.author}}: </strong>
+    {{message.message}}
+  </p>
+
+</div>
+
+<form [formGroup]="messageGroup">
+  <label for="author">Author: </label>
+  <input id="author" type="text" formControlName="author"><br>
+  <br>
+  <label for="message">Message: </label>
+  <input id="message" type="text" formControlName="message"><br>
+  <br>
+</form>
+
+<button (click)="sendMessage()">Send</button>
